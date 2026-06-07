@@ -12,7 +12,7 @@ export default function DetailScreen({ onVolver }) {
       <Image
         source={require('../assets/escudo.png')}
         style={styles.escudo}
-        resizeMode="contain"
+        resizeMode="contain" 
       />
 
       <Text style={styles.titulo}>Sobre la Selección</Text>
