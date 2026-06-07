@@ -13,7 +13,8 @@ export const EQUIPO = {
   apodo: 'La Tri',
   confederacion: 'CONMEBOL',
   entrenador: 'Sebastián Beccacece',
-  estadio: 'Estadio Rodrigo Paz Delgado (Quito)',
   fundacion: '1925',
-  fifaRanking: 'Top 25 FIFA',
+  fifaRanking: '23.º (2026)',
+  maximoGoleador: 'Enner Valencia',
+  mundiales: '5 (2002, 2006, 2014, 2022, 2026)',
 };

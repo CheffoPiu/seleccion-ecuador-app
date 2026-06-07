@@ -18,7 +18,10 @@ export default function App() {
       )}
 
       {pantalla === 'home' && (
-        <HomeScreen onVerDetalle={() => setPantalla('detail')} />
+        <HomeScreen
+          onVerDetalle={() => setPantalla('detail')}
+          onVerSplash={() => setPantalla('splash')}
+        />
       )}
 
       {pantalla === 'detail' && (

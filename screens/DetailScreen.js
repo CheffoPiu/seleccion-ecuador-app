@@ -19,13 +19,19 @@ export default function DetailScreen({ onVolver }) {
 
       <Text style={styles.parrafo}>
         La Selección de Ecuador, conocida como "{EQUIPO.apodo}", representa al país en
-        las competiciones de la {EQUIPO.confederacion}. Fue fundada en {EQUIPO.fundacion} y
-        disputa sus partidos de local en el {EQUIPO.estadio}.
+        las competiciones de la {EQUIPO.confederacion}. La Federación Ecuatoriana de Fútbol
+        fue fundada en {EQUIPO.fundacion}.
       </Text>
 
       <Text style={styles.parrafo}>
-        Actualmente es dirigida por {EQUIPO.entrenador} y se mantiene como una de las
-        selecciones más competitivas de Sudamérica ({EQUIPO.fifaRanking}).
+        Dirigida por {EQUIPO.entrenador}, ocupa el puesto {EQUIPO.fifaRanking} del ranking
+        FIFA y ya está clasificada al Mundial 2026, donde jugará en el Grupo E junto a
+        Alemania, Costa de Marfil y Curazao.
+      </Text>
+
+      <Text style={styles.parrafo}>
+        Su máximo goleador histórico es {EQUIPO.maximoGoleador}, y suma {EQUIPO.mundiales}
+        participaciones en Copas del Mundo. 💛💙❤️
       </Text>
 
       {/* Botón que muestra un mensaje (Alert) */}

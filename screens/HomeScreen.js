@@ -12,7 +12,7 @@ function DatoEquipo({ etiqueta, valor }) {
 }
 
 // Pantalla principal (Home).
-export default function HomeScreen({ onVerDetalle }) {
+export default function HomeScreen({ onVerDetalle, onVerSplash }) {
   return (
     <ScrollView
       style={styles.container}
@@ -35,13 +35,20 @@ export default function HomeScreen({ onVerDetalle }) {
       <View style={styles.tarjeta}>
         <DatoEquipo etiqueta="Confederación" valor={EQUIPO.confederacion} />
         <DatoEquipo etiqueta="Entrenador" valor={EQUIPO.entrenador} />
-        <DatoEquipo etiqueta="Estadio" valor={EQUIPO.estadio} />
         <DatoEquipo etiqueta="Fundación" valor={EQUIPO.fundacion} />
+        <DatoEquipo etiqueta="Ranking FIFA" valor={EQUIPO.fifaRanking} />
+        <DatoEquipo etiqueta="Máximo goleador" valor={EQUIPO.maximoGoleador} />
+        <DatoEquipo etiqueta="Mundiales" valor={EQUIPO.mundiales} />
       </View>
 
       {/* Botón interactivo que lleva a la pantalla de Detalle */}
       <TouchableOpacity style={styles.boton} onPress={onVerDetalle}>
         <Text style={styles.botonTexto}>Ver más sobre La Tri ⚽</Text>
+      </TouchableOpacity>
+
+      {/* Botón para volver a ver la pantalla de bienvenida (Splash) */}
+      <TouchableOpacity style={styles.botonSecundario} onPress={onVerSplash}>
+        <Text style={styles.botonSecundarioTexto}>🔄 Ver pantalla de bienvenida</Text>
       </TouchableOpacity>
     </ScrollView>
   );
@@ -115,6 +122,19 @@ const styles = StyleSheet.create({
   botonTexto: {
     color: COLORS.azul,
     fontSize: 16,
+    fontWeight: 'bold',
+  },
+  botonSecundario: {
+    marginTop: 14,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 30,
+    borderWidth: 2,
+    borderColor: COLORS.azul,
+  },
+  botonSecundarioTexto: {
+    color: COLORS.azul,
+    fontSize: 14,
     fontWeight: 'bold',
   },
 });
