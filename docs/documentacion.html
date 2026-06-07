@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #1A1A1A;
+    margin: 0;
+    padding: 0 48px 48px;
+    line-height: 1.55;
+    font-size: 13px;
+  }
+  .portada {
+    text-align: center;
+    padding: 60px 0 30px;
+    border-bottom: 6px solid #FFCC00;
+    margin-bottom: 28px;
+  }
+  .portada img { width: 130px; }
+  .portada h1 { color: #003DA5; font-size: 28px; margin: 18px 0 4px; }
+  .portada h2 { color: #555; font-size: 16px; font-weight: normal; margin: 0; }
+  .meta { margin-top: 18px; font-size: 13px; color: #333; }
+  h3 {
+    color: #003DA5;
+    border-left: 6px solid #FFCC00;
+    padding-left: 10px;
+    margin-top: 28px;
+    font-size: 17px;
+  }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  th, td { border: 1px solid #D5DBE2; padding: 7px 10px; text-align: left; }
+  th { background: #003DA5; color: #fff; }
+  tr:nth-child(even) td { background: #F5F7FA; }
+  code, pre {
+    font-family: 'Courier New', monospace;
+    background: #F0F2F5;
+    border-radius: 4px;
+  }
+  code { padding: 1px 5px; }
+  pre { padding: 12px; font-size: 12px; overflow-x: auto; border-left: 4px solid #003DA5; }
+  ul { margin: 6px 0; }
+  .nota {
+    background: #FFF8E1;
+    border-left: 5px solid #FFCC00;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 4px;
+  }
+  .colorbox {
+    display: inline-block; width: 14px; height: 14px;
+    border: 1px solid #999; vertical-align: middle; margin-right: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="portada">
+  <img src="../assets/escudo.png" alt="Escudo FEF">
+  <h1>Ecuador - La Tri</h1>
+  <h2>Aplicación móvil con React Native + Expo Go</h2>
+  <div class="meta">
+    Materia: Desarrollo de Aplicaciones Móviles<br>
+    Fecha: Junio 2026
+  </div>
+</div>
+
+<h3>1. Objetivo</h3>
+<p>
+  Desarrollar una aplicación móvil básica utilizando <b>React Native con Expo Go</b>,
+  con el fin de familiarizarse con el entorno de desarrollo móvil, la estructura de un
+  proyecto Expo y los componentes fundamentales de React Native. La app está dedicada a
+  la <b>Selección Ecuatoriana de Fútbol</b> y se compone de tres pantallas: bienvenida
+  (Splash), inicio (Home) y detalle.
+</p>
+
+<h3>2. Tecnologías utilizadas</h3>
+<table>
+  <tr><th>Herramienta</th><th>Versión / Detalle</th></tr>
+  <tr><td>React Native</td><td>0.85</td></tr>
+  <tr><td>Expo SDK</td><td>56</td></tr>
+  <tr><td>React</td><td>19</td></tr>
+  <tr><td>Lenguaje</td><td>JavaScript (Hooks: useState, useEffect)</td></tr>
+  <tr><td>Pruebas</td><td>App Expo Go (escaneo de código QR)</td></tr>
+</table>
+
+<h3>3. Paleta de colores (oficial de la Tri)</h3>
+<table>
+  <tr><th>Color</th><th>Uso</th><th>Hex</th></tr>
+  <tr><td><span class="colorbox" style="background:#FFCC00"></span>Amarillo</td><td>Textos destacados, botones</td><td>#FFCC00</td></tr>
+  <tr><td><span class="colorbox" style="background:#003DA5"></span>Azul</td><td>Fondos y encabezados</td><td>#003DA5</td></tr>
+  <tr><td><span class="colorbox" style="background:#ED1C24"></span>Rojo</td><td>Color de acento</td><td>#ED1C24</td></tr>
+</table>
+
+<h3>4. Estructura del proyecto</h3>
+<pre>seleccion/
+├── App.js                 # Controla la navegación entre pantallas
+├── theme.js               # Colores y datos del equipo (constantes)
+├── screens/
+│   ├── SplashScreen.js    # Pantalla de bienvenida
+│   ├── HomeScreen.js      # Pantalla principal
+│   └── DetailScreen.js    # Pantalla de detalle
+├── assets/escudo.png      # Escudo oficial de la FEF
+├── app.json               # Configuración de Expo
+└── package.json</pre>
+
+<h3>5. Descripción de las pantallas</h3>
+
+<p><b>5.1 Splash Screen</b></p>
+<ul>
+  <li>Logo oficial de la FEF centrado en pantalla.</li>
+  <li>Fondo azul (<code>#003DA5</code>) y texto amarillo "Ecuador - La Tri".</li>
+  <li>Navegación automática al Home tras 2.5 segundos usando <code>setTimeout</code> dentro de <code>useEffect</code>.</li>
+</ul>
+
+<p><b>5.2 Home Screen</b></p>
+<ul>
+  <li>Encabezado con el nombre del equipo.</li>
+  <li>Imagen del escudo de la Selección.</li>
+  <li>Datos básicos: Confederación (CONMEBOL), Entrenador, Estadio (Rodrigo Paz Delgado) y Fundación.</li>
+  <li>Botón interactivo que navega a la pantalla de Detalle.</li>
+</ul>
+
+<p><b>5.3 Detail Screen</b></p>
+<ul>
+  <li>Texto descriptivo de la Selección.</li>
+  <li>Botón que muestra un mensaje emergente (<code>Alert</code>).</li>
+  <li>Botón para volver al Home.</li>
+</ul>
+
+<h3>6. Lógica de navegación</h3>
+<p>
+  La navegación se implementó de forma sencilla con el Hook <code>useState</code> en
+  <code>App.js</code>, alternando entre las pantallas mediante una variable de estado.
+  Esto permite entender los fundamentos sin librerías externas.
+</p>
+<pre>const [pantalla, setPantalla] = useState('splash');
+
+{pantalla === 'splash' &amp;&amp; &lt;SplashScreen onFinish={() =&gt; setPantalla('home')} /&gt;}
+{pantalla === 'home'   &amp;&amp; &lt;HomeScreen onVerDetalle={() =&gt; setPantalla('detail')} /&gt;}
+{pantalla === 'detail' &amp;&amp; &lt;DetailScreen onVolver={() =&gt; setPantalla('home')} /&gt;}</pre>
+
+<h3>7. Cómo ejecutar la aplicación</h3>
+<pre>npm install      # instalar dependencias
+npx expo start   # iniciar el servidor</pre>
+<p>Luego se escanea el código QR con la app <b>Expo Go</b> en el celular.</p>
+
+<h3>8. Capturas de pantalla</h3>
+<div class="nota">
+  <b>Pendiente:</b> reemplazar este recuadro con las capturas reales del Splash, Home y
+  Detalle tomadas desde tu celular (Expo Go) antes de entregar el PDF.
+</div>
+
+<h3>9. Repositorio</h3>
+<p>Enlace al repositorio público (GitHub): <b>[ pega aquí la URL de tu repositorio ]</b></p>
+
+</body>
+</html>
